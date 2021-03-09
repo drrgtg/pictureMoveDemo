@@ -8,13 +8,13 @@
 import UIKit
 
 class ViewController: UIViewController {
-
-
+    
+    
     @IBOutlet weak var containerView: UIView!
     
     private var leftContainerView: UIView!
     private var rightContainerView: UIView!
-
+    
     private var leftImageView: UIImageView!
     private var rightImageView: UIImageView!
     private var originLeftRect: CGRect!
@@ -81,40 +81,41 @@ class ViewController: UIViewController {
         originLeftRect = leftImageView.frame
         rightImageView.frame = CGRect(x: 0, y: 0, width: imageWidth, height: height)
         originRightRect = rightImageView.frame
-
+        
         leftContainerView.frame = CGRect(x: 0, y: 0, width:width, height: height)
         rightContainerView.frame = CGRect(x: width, y: 0, width: width, height: height)
     }
     // MARK: 滑动手势监听
     @objc private func moveImageView(_ pan: UIPanGestureRecognizer) {
         if pan.state == .changed {
-                let changedPointX = pan.translation(in: leftContainerView).x
-                var movedLeftX: CGFloat = 0
-                var movedRightX: CGFloat = 0
-                let absMoved = CGFloat(fabs(Double(changedPointX)))
-                if leftImageView.frame.origin.x <= 0,
-                   leftImageView.frame.origin.x >= (leftContainerView.frame.size.width - leftImageView.frame.width),
-                   absMoved >= 0 ,
-                   absMoved <= leftContainerView.frame.size.width {
-                    // 滑动左边
-                    if pan.view == leftContainerView {
-                        movedLeftX = originLeftRect.origin.x + changedPointX
-                        movedRightX = originRightRect.origin.x - changedPointX
-                        if movedLeftX <= 0 ,
-                           movedLeftX >= (leftContainerView.frame.size.width - leftImageView.frame.width)  {
-                            leftImageView.frame = CGRect(x: movedLeftX, y: 0, width: originLeftRect.size.width, height: originLeftRect.size.height)
-                            rightImageView.frame = CGRect(x: movedRightX, y: 0, width: originRightRect.size.width, height: originRightRect.size.height)
-                        }
-                    } else {
-                        movedLeftX = originLeftRect.origin.x - changedPointX
-                        movedRightX = originRightRect.origin.x + changedPointX
-                        if movedLeftX <= 0 ,
-                           movedLeftX >= (leftContainerView.frame.size.width - leftImageView.frame.width)  {
-                            leftImageView.frame = CGRect(x: movedLeftX, y: 0, width: originLeftRect.size.width, height: originLeftRect.size.height)
-                            rightImageView.frame = CGRect(x: movedRightX, y: 0, width: originRightRect.size.width, height: originRightRect.size.height)
-                        }
+            let changedPointX = pan.translation(in: leftContainerView).x
+            var movedLeftX: CGFloat = 0
+            var movedRightX: CGFloat = 0
+            let absMoved = CGFloat(fabs(Double(changedPointX)))
+            // 处理边界以及异常条件
+            if leftImageView.frame.origin.x <= 0,
+               leftImageView.frame.origin.x >= (leftContainerView.frame.size.width - leftImageView.frame.width),
+               absMoved >= 0 ,
+               absMoved <= leftContainerView.frame.size.width {
+                // 滑动左边
+                if pan.view == leftContainerView {
+                    movedLeftX = originLeftRect.origin.x + changedPointX
+                    movedRightX = originRightRect.origin.x - changedPointX
+                    if movedLeftX <= 0 ,
+                       movedLeftX >= (leftContainerView.frame.size.width - leftImageView.frame.width)  {
+                        leftImageView.frame = CGRect(x: movedLeftX, y: 0, width: originLeftRect.size.width, height: originLeftRect.size.height)
+                        rightImageView.frame = CGRect(x: movedRightX, y: 0, width: originRightRect.size.width, height: originRightRect.size.height)
+                    }
+                } else {
+                    movedLeftX = originLeftRect.origin.x - changedPointX
+                    movedRightX = originRightRect.origin.x + changedPointX
+                    if movedLeftX <= 0 ,
+                       movedLeftX >= (leftContainerView.frame.size.width - leftImageView.frame.width)  {
+                        leftImageView.frame = CGRect(x: movedLeftX, y: 0, width: originLeftRect.size.width, height: originLeftRect.size.height)
+                        rightImageView.frame = CGRect(x: movedRightX, y: 0, width: originRightRect.size.width, height: originRightRect.size.height)
                     }
                 }
+            }
         } else if pan.state == .ended {
             originLeftRect = leftImageView.frame
             originRightRect = rightImageView.frame
@@ -134,6 +135,6 @@ class ViewController: UIViewController {
         alertController.addAction(cancelAction)
         show(alertController, sender: nil)
     }
-
+    
 }
 
