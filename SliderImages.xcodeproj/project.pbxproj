@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		7A46E74625F784C4003A9D70 /* UIView+Screenshot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A46E74525F784C4003A9D70 /* UIView+Screenshot.swift */; };
+		7A46E75025F8FEF4003A9D70 /* Double+RoundToDecimal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A46E74F25F8FEF4003A9D70 /* Double+RoundToDecimal.swift */; };
+		7A46E75325F9A1B6003A9D70 /* UIImage+Tool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A46E75225F9A1B6003A9D70 /* UIImage+Tool.swift */; };
 		7A8B78D825F76A3F0000A3E9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A8B78D725F76A3F0000A3E9 /* AppDelegate.swift */; };
 		7A8B78DA25F76A3F0000A3E9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A8B78D925F76A3F0000A3E9 /* SceneDelegate.swift */; };
 		7A8B78DC25F76A3F0000A3E9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A8B78DB25F76A3F0000A3E9 /* ViewController.swift */; };
@@ -18,6 +20,8 @@
 
 /* Begin PBXFileReference section */
 		7A46E74525F784C4003A9D70 /* UIView+Screenshot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Screenshot.swift"; sourceTree = "<group>"; };
+		7A46E74F25F8FEF4003A9D70 /* Double+RoundToDecimal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+RoundToDecimal.swift"; sourceTree = "<group>"; };
+		7A46E75225F9A1B6003A9D70 /* UIImage+Tool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Tool.swift"; sourceTree = "<group>"; };
 		7A8B78D425F76A3F0000A3E9 /* SliderImages.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SliderImages.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A8B78D725F76A3F0000A3E9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7A8B78D925F76A3F0000A3E9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -61,7 +65,9 @@
 				7A8B78D725F76A3F0000A3E9 /* AppDelegate.swift */,
 				7A8B78D925F76A3F0000A3E9 /* SceneDelegate.swift */,
 				7A8B78DB25F76A3F0000A3E9 /* ViewController.swift */,
+				7A46E75225F9A1B6003A9D70 /* UIImage+Tool.swift */,
 				7A46E74525F784C4003A9D70 /* UIView+Screenshot.swift */,
+				7A46E74F25F8FEF4003A9D70 /* Double+RoundToDecimal.swift */,
 				7A8B78DD25F76A400000A3E9 /* Main.storyboard */,
 				7A8B78E025F76A440000A3E9 /* Assets.xcassets */,
 				7A8B78E225F76A440000A3E9 /* LaunchScreen.storyboard */,
@@ -140,7 +146,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7A46E75325F9A1B6003A9D70 /* UIImage+Tool.swift in Sources */,
 				7A46E74625F784C4003A9D70 /* UIView+Screenshot.swift in Sources */,
+				7A46E75025F8FEF4003A9D70 /* Double+RoundToDecimal.swift in Sources */,
 				7A8B78DC25F76A3F0000A3E9 /* ViewController.swift in Sources */,
 				7A8B78D825F76A3F0000A3E9 /* AppDelegate.swift in Sources */,
 				7A8B78DA25F76A3F0000A3E9 /* SceneDelegate.swift in Sources */,
@@ -291,6 +299,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = TEA4KWX63Q;
 				INFOPLIST_FILE = SliderImages/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -309,6 +318,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = TEA4KWX63Q;
 				INFOPLIST_FILE = SliderImages/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
