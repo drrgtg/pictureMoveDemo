@@ -170,6 +170,13 @@ class ViewController: UIViewController {
             left_x = left_x - leftImageView.frame.maxX + leftContainerView.frame.maxX
         }
         if left_y > 0 {
+            // 靠上
+            left_y = 0
+        } else if left_y < leftContainerView.frame.maxY - height  {
+            // 靠下
+            left_y = leftContainerView.frame.height - height
+        }
+        if left_y > 0 {
             left_y = 0
         }
         var right_x = rightImageView.frame.minX - (width - rightImageView.frame.width)/2
@@ -182,7 +189,11 @@ class ViewController: UIViewController {
             right_x = right_x - rightImageView.frame.maxX + rightContainerView.frame.maxX/2
         }
         if right_y > 0 {
+            // 靠上
             right_y = 0
+        } else if right_y < rightContainerView.frame.maxY - height {
+            // 靠下
+            right_y = rightContainerView.frame.height - height
         }
         leftImageView.frame = CGRect(x: left_x, y: left_y, width: width, height: height)
         rightImageView.frame = CGRect(x: right_x, y: right_y, width: width, height: height)
